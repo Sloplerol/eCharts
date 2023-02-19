@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.js"></script>
+    <style>
+        .box {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        let dom = document.querySelector('.box');
+        let myecharts = echarts.init(dom);
+        myecharts.setOption({
+            title: {
+                text: 'echart图表'
+            },
+            xAxis: {
+                data: ['靓丽','美食','娱乐','新闻']
+            },
+            yAxis: [
+                {
+                    //显示y轴
+                    axisLine: {
+                        show: true
+                    },
+                    // 显示刻度
+                    axisTick: {
+                        show: true
+                    }
+                },
+                {
+                    //显示y轴
+                    axisLine: {
+                        show: true
+                    },
+                    // 显示刻度
+                    axisTick: {
+                        show: true
+                    }
+                }
+            ]
+            ,
+            series: [
+                {
+                    type: 'bar',
+                    data: [10,20,30,40],
+                    yAxisIndex: 0
+                },
+                {
+                    type: 'line',
+                    data: [6,40,100,39],
+                    yAxisIndex: 1
+
+                },
+            ]
+        })
+    </script>
+</body>
+</html>

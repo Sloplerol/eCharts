@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <div class="box" style="width: 600px;height:400px;"></div>
+    <script>
+        let dm = document.querySelector('div');
+        let box = document.querySelector('.box');
+        //创建echarts实例
+        let myecharts = echarts.init(dm);
+        let myecharts1 = echarts.init(box);
+        myecharts.setOption({
+            title: {
+                text: '主标题',
+                subtext: '副标题',
+                textStyle: {
+                    color: 'pink'
+                },
+                left: 'center'
+            },
+            xAxis: {
+                data: ['衣服','数码','美食','博主']
+            },
+            yAxis: {
+                axisLine: {
+                    show: true
+                }
+            },
+            series: [
+                {
+                    type: 'bar',
+                    //bar为柱状图 line为折线图 pie为饼图
+                    data: [10,20,30,40],
+                    color: 'red'
+                    
+                }
+            ]
+        })
+        myecharts1.setOption({
+            title: {
+                text: 'echart折线图',
+                textStyle: {
+                    color: 'pink'
+                },
+                subtext: '副标题',
+                subtextStyle: {
+                    color: 'purple'
+                },
+                left: 'center'
+            },
+            xAxis: {
+                data: ['星期一','星期二','星期三','星期四','星期五','星期六','星期日']
+            },
+            yAxis: {},
+            series: {
+                type: 'line',
+                data: [10,2,17,3,2,15]
+            }
+        })
+    </script>
+</body>
+</html>

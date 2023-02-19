@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.js"></script>
+</head>
+<body>
+    <div class="box" style="width: 600px;height:400px;"></div>
+    <script>
+        let dom = document.querySelector('.box');
+        //创建echarts实例
+        let myecharts = echarts.init(dom);
+        console.log(myecharts);
+        //数据集 必须是一个二维数组
+        let data = [
+            ["衣服",10,20,'x',30],
+            ["数码",12,25,'y',10],
+            ["美食",20,39,'z',69],
+            ["博主",30,20,'t',59],
+            
+        ]
+        myecharts.setOption({
+            // 字符集
+            dataset: {
+                source: data
+            },
+            title: {
+                text: '主标题',
+                subtext: '副标题',
+                textStyle: {
+                    color: 'pink'
+                },
+                left: 'center'
+            },
+            xAxis: {
+                data: ['衣服','数码','美食','博主']
+            },
+            yAxis: {
+                axisLine: {
+                    show: true
+                }
+            },
+            series: [
+                {
+                    type: 'bar',
+                    //bar为柱状图 line为折线图 pie为饼图
+                    // data: [10,20,30,40],
+                    color: 'red',
+                    encode: {
+                        y: 1
+                    }
+                    
+                },
+                {
+                    type: 'line',
+                    //bar为柱状图 line为折线图 pie为饼图
+                    // data: [10,20,30,40],
+                    color: 'pink',
+                    encode: {
+                        y: 2
+                    }
+                    
+                },
+                {
+                    type: 'pie',
+                    //bar为柱状图 line为折线图 pie为饼图
+                    // data: [{name: 'x',value: 10},{name: 'y',value: 20},{name: 'z',value: 30},{name: 't',value: 40}],
+                    width: '150px',
+                    height: '150px',
+                    top: '100px',
+                    left: '150px',
+                    radius: 25,
+                    encode: {
+                        itemName: 3,
+                        value: 4
+                    }
+                    
+                }
+            ]
+        })
+    </script>
+</body>
+</html>

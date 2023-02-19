@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script>
+        let dm = document.querySelector('div');
+        //创建echarts实例
+        let myecharts = echarts.init(dm);
+        console.log(myecharts);
+        myecharts.setOption({
+            title: {
+                text: '主标题',
+                subtext: '副标题',
+                textStyle: {
+                    color: 'pink'
+                },
+                left: 'center'
+            },
+            xAxis: {
+                data: ['衣服','数码','美食','博主']
+            },
+            yAxis: {
+                axisLine: {
+                    show: true
+                }
+            },
+            series: [
+                {
+                    type: 'bar',
+                    //bar为柱状图 line为折线图 pie为饼图
+                    data: [10,20,30,40],
+                    color: 'red'
+                    
+                }
+            ]
+        })
+    </script>
+</body>
+</html>
