@@ -7,7 +7,11 @@
 
 ### Simple_usage
 1. Induct the online cdn or npm install
-> npm install echarts or <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.js"></script>
+> npm install echarts
+Or
+```
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.js"></script>
+```
 2. Acquired the DOM element
 ```
 let div = document.querySelector('div');
